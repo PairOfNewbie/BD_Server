@@ -11,12 +11,27 @@
 |
 */
 
-Route::get('/','TestController@index');
+//Route::get('/','TestController@index');
+Route::get('/',function(){
+//$results = DB::table('users')->where('id',1)->get();
+$results = DB::table('users')
+	->join('pages','users.id','=','pages.id')
+	->select('users.*','pages.*')
+	->get();
+return json_encode($results);
+});
 
 Route::get('/about', function () {
     return 'about';
 });
 
+
+$api = app('Dingo\Api\Routing\Router');
+$api->version('v1', function ($api) {
+    $api->get('/hello/', function () {
+        return "hello";
+    });
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +47,3 @@ Route::get('/about', function () {
 Route::group(['middleware' => ['web']], function () {
     //
 });
-
-// 认证路由...
-Route::get('auth/login', 'Auth\loginController@getLogin');
-Route::post('auth/login', 'Auth\loginController@postLogin');
-Route::get('auth/logout', 'Auth\loginController@getLogout');
-
-
-Route::post('/', 'Auth\loginController@postLogin');

@@ -24,7 +24,7 @@ if (!isset($_SESSION['user'])) {
         $user_password = mysqli_real_escape_string($dbc, trim($_POST['password']));
         if (!empty($user_username) && !empty($user_password)) {
             // Look up the username and password in the database
-            $query = "SELECT user FROM admin WHERE user = '$user_username' and WHERE pwd = '$user_password'";
+            $query = "SELECT user FROM admin WHERE user = '$user_username'";
             $data = mysqli_query($dbc, $query);
 	if (mysqli_num_rows($data) == 1) {
                 // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page

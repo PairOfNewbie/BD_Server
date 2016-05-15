@@ -29,8 +29,8 @@ if (!isset($_SESSION['user'])) {
 
             $row = mysqli_fetch_array($data);
             $pwd = $row['pwd'];
-            $hash_pwd = sha1($user_password);
-            if ((mysqli_num_rows($data) == 1)&& ($hash_pwd == $pwd)) {
+	$hash_pwd = sha1($user_password);
+	if ((mysqli_num_rows($data) == 1)&& ($hash_pwd == $pwd)) {
                 // The log-in is OK so set the user ID and username session vars (and cookies), and redirect to the home page
                 $_SESSION['user'] = $row['user'];
                 setcookie('user', $row['user'], time() + (10));//(60 * 60 * 24 * 7));  // expires in 7 days

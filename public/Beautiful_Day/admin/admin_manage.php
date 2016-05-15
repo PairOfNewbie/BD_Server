@@ -54,16 +54,19 @@ if (isset($_POST['submit'])) {
             if (($_FILES['image']['error'] == 0)&&($_FILES['music']['error'] == 0)) {
                 // Move the file to the target upload folder
                 $target_img = __IMAGE_DIR ."/". $image;  
-                $target_music = __MUSIC_DIR."/" . $music;
-                $image_url = __IMG_URLPATH ."/". $image;
+                $target_music = __MUSIC_DIR."/" . $music;                
+		$image_url = __IMG_URLPATH ."/". $image;
                 $music_url = __MUSIC_URLPATH ."/". $music;
+
+echo $target_img.'</br>';
+echo $image_url.'</br>';
 
                 if ((move_uploaded_file($_FILES['image']['tmp_name'], $target_img))&&(move_uploaded_file($_FILES['music']['tmp_name'], $target_music))) {
                     // Connect to the database
                     $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
                     // Write the data to the database
-                    $query = "INSERT INTO data VALUES (0, '$date', '$text', '$image_url', '$music_url')";
+                    $query = "INSERT INTO data VALUES (0, '$date', '$text', '$img_url', '$music_url')";
                     mysqli_query($dbc, $query);
 
                     // Confirm success with the user

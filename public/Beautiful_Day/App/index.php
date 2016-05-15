@@ -16,19 +16,24 @@ $date = $arr['date'];
 $link = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 // Retrieve the score data from MySQL
-$query = "SELECT * FROM data WHERE date = '$date'";
-$result = mysqli_query($link, $query);
+//$query = "SELECT * FROM data WHERE date = '$date'";
+$query = "select * from data order by date desc limit 5";
 
+$result = mysqli_query($link, $query);
+$i=0;
 while ($data_info = mysqli_fetch_array($result,MYSQL_ASSOC)){ //返回查询结果到数组
     $date = $data_info["date"]; //将数据从数组取出
-	$music = $data_info['music'];
-
-$json_data = json_encode($data_info, JSON_UNESCAPED_SLASHES);
-echo $json_data;
-}
-
-//$json_data = json_encode($data_info);
+	$music = $data_info['music_url'];
+$data_array[$i] = $data_info;
+//$json_data[$i] = json_encode($data_info, JSON_UNESCAPED_SLASHES);
+$i++;
 //echo $json_data;
+}
+//echo $data_array[2];
+$json_data=json_encode($data_array,JSON_UNESCAPED_SLASHES);
+//echo $json_data[];
+//$json_data = json_encode($data_info);
+echo $json_data;
 
 mysqli_free_result($result);
 mysqli_close($link);

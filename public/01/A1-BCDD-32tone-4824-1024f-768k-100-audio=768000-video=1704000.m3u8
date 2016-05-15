@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT-X-VERSION:1
+## Created with Unified Streaming Platform(version=1.5.7)
+#EXT-X-MEDIA-SEQUENCE:1
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-TARGETDURATION:11
+#EXTINF:10, no desc
+A1-BCDD-32tone-4824-1024f-768k-100-audio=768000-video=1704000-1.ts
+#EXTINF:5, no desc
+A1-BCDD-32tone-4824-1024f-768k-100-audio=768000-video=1704000-2.ts
+#EXT-X-ENDLIST
