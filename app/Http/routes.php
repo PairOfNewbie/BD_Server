@@ -14,11 +14,11 @@
 //Route::get('/','TestController@index');
 Route::get('/',function(){
 //$results = DB::table('users')->where('id',1)->get();
-$results = DB::table('users')
-	->join('pages','users.id','=','pages.id')
-	->select('users.*','pages.*')
-	->get();
-return json_encode($results);
+//$results = DB::table('users')
+//	->join('pages','users.id','=','pages.id')
+//	->select('users.*','pages.*')
+//	->get();
+//return json_encode($results);
 });
 
 Route::get('/about', function () {
@@ -28,9 +28,14 @@ Route::get('/about', function () {
 
 $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
-    $api->get('/hello/', function () {
+    $api->get('/hello', function () {
         return "hello";
     });
+});
+
+// Publicly accessible routes
+$api->version('v1', [], function ($api) {
+    $api->post('/adminauth', 'App\Http\Controllers\AdminauthController@backend');
 });
 
 /*

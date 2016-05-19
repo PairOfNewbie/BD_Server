@@ -72,8 +72,8 @@ return [
     | e.g. 'Acme\Entities\User'
     |
     */
-
-    'user' => 'App\User',
+    'admin' => 'App\User',
+    //'user' => 'App\User',
 
     /*
     |--------------------------------------------------------------------------

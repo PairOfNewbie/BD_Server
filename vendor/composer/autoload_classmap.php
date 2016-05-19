@@ -9,6 +9,7 @@ return array(
     'CreateAdminTable' => $baseDir . '/database/migrations/2016_05_15_143537_create_admin_table.php',
     'CreateAlbumTable' => $baseDir . '/database/migrations/2016_05_15_144127_create_album_table.php',
     'CreateCommentTable' => $baseDir . '/database/migrations/2016_05_15_144612_create_comment_table.php',
+    'CreateUsersTable' => $baseDir . '/database/migrations/2016_05_15_184237_create_users_table.php',
     'CreateZanTable' => $baseDir . '/database/migrations/2016_05_15_140251_create_zan_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
