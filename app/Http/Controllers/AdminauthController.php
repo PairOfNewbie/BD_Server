@@ -22,7 +22,7 @@ class AdminauthController extends Controller
 //echo $json_data;
 User::insert([
 	'name'=>'test1',
-	'password'=>Hash::make('6821783');
+	'password'=>Hash::make('6821783'),
 	]);
 
 

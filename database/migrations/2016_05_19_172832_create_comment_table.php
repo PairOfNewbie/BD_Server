@@ -10,6 +10,7 @@ class CreateCommentTable extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         //
@@ -29,7 +30,6 @@ class CreateCommentTable extends Migration
      */
     public function down()
     {
-        //
         Schema::drop('comment_data');
     }
 }
