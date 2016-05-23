@@ -12,6 +12,8 @@
 */
 
 Route::get('/','TestController@index');
+Route::post('api','api\v1\AlbumController@testinfo');
+
 //Route::get('/',function(){
 //$results = DB::table('users')->where('id',1)->get();
 //$results = DB::table('users')
@@ -40,9 +42,9 @@ $api->version('v1', function($api){
 });
 
 
-//Route::group(['prefix'=>'api/v1'],function(){
-//   Route::resource('album_data','api\v1\AlbumController');
-//});
+Route::group(['prefix'=>'api/v2'],function(){
+   Route::resource('album_data','api\v1\AlbumController');
+});
 //
 //$api = app('Dingo\Api\Routing\Router');
 //$api->version('v1', function ($api) {
