@@ -20,7 +20,7 @@
 	
 	"Content-Type" : "application/json"
 	"user_id" : 4573 (int)
-	// "accesstoken" : "fjkdfkda"
+	 "accesstoken" : "fjkdfkda"
 
 #####BaseResponse
 
@@ -70,8 +70,7 @@
 #####Method
 
 	// todo
-	Post http://112.74.106.192/Beautiful_Day/App/index.php
-
+	Post http://www.dev4love.com/api/oneday
 #####Headers
 
 	nil
@@ -88,15 +87,18 @@
 	“2016-04-14”（日期的格式需要占位0）
 
 #####Response
-
-	{
-	"album_id" : 5743 (int)
-	"date" : "2016-04-14",
-	"text" : "just for test",
-	"img_url" : "http://112.74.106.192/Beautiful_Day/image/2016-04-14.jpg"
-	"music_url" : "http://112.74.106.192/Beautiful_Day/music/2016-04-14.mp3"
-	"page_url" : "http://112.74.106.192/Beautiful_Day/2016-04-14"
-	}
+<pre><code>
+{
+  "dayinfo": {
+    "album_id": 1,
+    "date": "2016-05-18",
+    "text": "justfortest",
+    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
+    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+  }
+}
+</pre></code>
 
 ***
 
@@ -107,7 +109,7 @@
 #####Method
 
 	// todo
-	Post http://112.74.106.192/Beautiful_Day/App/index.php
+	Post http://www.dev4love.com/api/daylist
 
 #####Headers
 
@@ -130,26 +132,28 @@
 
 #####Response
 
-	{
-	"success" : YES (bool)
-	"dayinfolist" : [
-			{
-			"album_id" : 5743 (int)
-			"date" : "2016-04-14",
-			"text" : "just for test",
-			"img_url" : "http://112.74.106.192/Beautiful_Day/image/2016-04-14.jpg"
-			"music_url" : "http://112.74.106.192/Beautiful_Day/music/2016-04-14.mp3"
-			"page_url" : "http://112.74.106.192/Beautiful_Day/2016-04-14"
-			},
-			"album_id" : 5742 (int)
-			"date" : "2016-04-13",
-			"text" : "just for test",
-			"img_url" : "http://112.74.106.192/Beautiful_Day/image/2016-04-13.jpg"
-			"music_url" : "http://112.74.106.192/Beautiful_Day/music/2016-04-13.mp3"
-			"page_url" : "http://112.74.106.192/Beautiful_Day/2016-04-13"			},
-			...
-		]
-	}
+<pre><code>
+{
+  "album_datas": [
+    {
+      "album_id": 1,
+      "date": "2016-05-18",
+      "text": "justfortest",
+      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
+      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    },
+    {
+      "album_id": 2,
+      "date": "2016-05-17",
+      "text": "test",
+      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
+      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
+      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    }
+  ]
+}
+</pre></code>
 
 ***
 
@@ -160,7 +164,7 @@
 
 #####Method
 
-	Post http://112.74.106.192/Beautiful_Day/App/
+	Post http://www.dev4love.com/api/albumdetail
 
 #####Headers
 
@@ -172,33 +176,42 @@
 
 #####Parameters  
 
-	"album_id" : 4938 (int)
+	"album_id" : 4938 (int),"user_id" : 23 (int)
 
 #####Response
-
-	{
-	"album_id" : 4398 (int)
-	"date":"2016-04-14"
-	"page_url" : "http://112.74.106.192/Beautiful_Day/page/2016-04-14",
-			...
-		]
-	"zanlist" : ["jason", "tom", "lucy", "david"]
-	"commentlist" : [
-			{
-			"user_name" : "jason"
-			"content" : "bilibili"
-			"comment_id" : 537 (int)
-			},
-			{
-			"user_name" : "jason"
-			"content" : "bilibili"
-			"comment_id" : 537 (int)
-			},
-			...
-		]
-	"iszan" : YES (bool)
-	}
-
+<pre><code>
+{
+  "zan": 1,
+  "albuminfo": {
+    "album_id": 2,
+    "date": "2016-05-17",
+    "text": "test",
+    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
+    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
+    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+  },
+  "commentlist": [
+    {
+      "album_id": 2,
+      "content": "comment test 2016-05-24-2317",
+      "user_id": 2
+    },
+    {
+      "album_id": 2,
+      "content": "111111111",
+      "user_id": 3
+    }
+  ],
+  "zanlist": [
+    {
+      "user_name": "lucy"
+    },
+    {
+      "user_name": "lily"
+    }
+  ]
+}
+</code></pre>
 
 ***
 

@@ -12,8 +12,10 @@
 */
 
 Route::get('/','TestController@index');
-Route::post('api','api\v1\AlbumController@testinfo');
+Route::post('api/albumdetail','api\v1\AlbumController@fetch_album_detail');
+Route::post('api/oneday','api\v1\AlbumController@getonedayinfo');
 
+Route::post('api/zan','api\v1\ZanController@zan');
 //Route::get('/',function(){
 //$results = DB::table('users')->where('id',1)->get();
 //$results = DB::table('users')
@@ -33,7 +35,7 @@ $api->version('v1', function($api){
     $api->group(['namespace' =>'App\Http\Controllers\api\v1'],function($api){
         $api->post('admin/login','AuthController@authenticate');
 
-        $api->post('oneday','AlbuminfoController@getonedayinfo');
+        //$api->post('oneday','AlbuminfoController@getonedayinfo');
 
         //$api->group(['middleware' => 'jwt.auth'],function($api){
         $api->post('daylist','AlbuminfoController@fetchdayinfolist');
