@@ -30,13 +30,15 @@ Route::get('/about', function () {
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function($api){
-    $api->group(['namespace' =>'App\Http\Controllers\Api\v1'],function($api){
+    $api->group(['namespace' =>'App\Http\Controllers\api\v1'],function($api){
         $api->post('admin/login','AuthController@authenticate');
 
-        $api->post('album_data','AlbuminfoController@getonedayinfo');
+        $api->post('oneday','AlbuminfoController@getonedayinfo');
 
         //$api->group(['middleware' => 'jwt.auth'],function($api){
-            $api->get('album_data','AlbuminfoController@index');
+        $api->post('daylist','AlbuminfoController@fetchdayinfolist');
+
+        $api->post('albuminfo','AlbuminfoController@fetchalbuminfolist');
         //});
     });
 });
