@@ -19,17 +19,17 @@ class AlbuminfoController extends BaseController{
 
 
 
-//    public function fetchdayinfolist(Request $request)
-//    {
-//        $date = $request->input('startdate');
-//        $count = $request->input('count');
-//
-//        $dayinfo = album_data::where('date','<=',$date)->orderBy('date', 'desc')->take($count)->get();
-//
-//        return $this->response->item($dayinfo, new AlbumTransformer);//->withHeader('Status', 'success');
-//
-//
-//    }
+    public function fetchdayinfolist(Request $request)
+    {
+        $date = $request->input('startdate');
+        $count = $request->input('count');
+
+        $dayinfo = album_data::where('date','<=',$date)->orderBy('date', 'desc')->take($count)->get();
+
+        return $this->response->item($dayinfo, new AlbumTransformer);//->withHeader('Status', 'success');
+
+
+    }
 
     public function fetchalbuminfolist(Request $request)
     {
