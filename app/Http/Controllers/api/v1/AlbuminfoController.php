@@ -16,41 +16,20 @@ use Illuminate\Support\Str;
 
 
 class AlbuminfoController extends BaseController{
-    //
-    //return "success";
-    public function index()
-    {
-        $albuminfo = album_data::all();
-        return $this->response->collection($albuminfo,new AlbumTransformer);
-    }
-
-    public function getonedayinfo(Request $request)
-    {
-        $date = $request->input('date');
-        $dayinfo = album_data::where('date',$date)->get();
-        if ($dayinfo == '[]')
-            $status = 0;
-        else
-            $status = 1;
-        //$onedayinfo = album_data::
-        //$onedayinfo = DB::table('album_data')->where('date', $date)->first();
-        //$test=json_encode($onedayinfo,JSON_UNESCAPED_SLASHES);
-        return $this->response->item($dayinfo, new AlbumTransformer)->withHeader('Success', $status);
 
 
-    }
 
-
-    public function fetchdayinfolist(Request $request)
-    {
-        $date = $request->input('date');
-        //$dayinfo = album_data::where('date',$date)->orderBy('date', 'desc')->take(10)->get();
-        $dayinfo = album_data::where('date','<=',$date)->orderBy('date', 'desc')->take(2)->get();
-
-        return $this->response->item($dayinfo, new AlbumTransformer);//->withHeader('Status', 'success');
-
-
-    }
+//    public function fetchdayinfolist(Request $request)
+//    {
+//        $date = $request->input('startdate');
+//        $count = $request->input('count');
+//
+//        $dayinfo = album_data::where('date','<=',$date)->orderBy('date', 'desc')->take($count)->get();
+//
+//        return $this->response->item($dayinfo, new AlbumTransformer);//->withHeader('Status', 'success');
+//
+//
+//    }
 
     public function fetchalbuminfolist(Request $request)
     {

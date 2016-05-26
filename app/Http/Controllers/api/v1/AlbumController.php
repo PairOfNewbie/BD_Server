@@ -19,20 +19,23 @@ use DB;
 class AlbumController extends Controller
 {
 
-    public function index()
+    public function getonedayinfo(Request $request)
     {
-        $album_data = album_data::all();
-        //$json = file_get_contents("php://input");
-        //$oneday = json_decode($json, true);
-        //$dayinfo = album_data::findOrFail($date);
-        return \Response::json([
-            'status'=>'success',
-            'status_code'=>200,
-            'data'=>$this->transformCollection($album_data)
-        ]);
-    }
+        $date = $request->input('date');
+        $dayinfo = album_data::where('date',$date)->get()->toArray();
+        if ($dayinfo == '[]')
+            $status = 0;
+        else
+            $status = 1;
 
-    public function testinfo(Request $request)
+        //return $this->response->item($dayinfo, new AlbumTransformer)->header('Success', $status);
+        return \Response::json([
+            'dayinfo'=>$dayinfo[0]
+            ]);
+
+    }
+    
+    public function fetch_album_detail(Request $request)
     {
 
         $albumid = $request->input('album_id');
