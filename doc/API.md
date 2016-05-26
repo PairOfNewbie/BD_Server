@@ -81,10 +81,10 @@
 
 #####Parameters  
 
-	"date" : "2016-04-14"
+	"date" : "2016-05-18"
 	
 	explaination：  
-	“2016-04-14”（日期的格式需要占位0）
+	“2016-05-18”（日期的格式需要占位0）
 
 #####Response
 <pre><code>
@@ -121,10 +121,10 @@
 
 #####Parameters  
 
-	"startdate" : "2016-04-14"
-	"count" : 10
+	"startdate" : "2016-05-18"
+	"count" : 2
 	explaination：  
-	“2016-04-14”（日期的格式需要占位0）
+	“2016-05-18”（日期的格式需要占位0）
 	“startdate” 返回时包括该日期
 	"count" 获取的个数
 	返回数组应从该日期起往前逆序排列，如：4.14；4.13；4.12；4.11......
@@ -176,7 +176,7 @@
 
 #####Parameters  
 
-	"album_id" : 4938 (int),"user_id" : 23 (int)
+	"album_id" : 1或者2 (int),"user_id" : 1或者2或者3 (int)
 
 #####Response
 <pre><code>
@@ -221,7 +221,7 @@
 
 #####Method
 
-	Post http://112.74.106.192/Beautiful_Day/App/zan
+	Post http://www.dev4love.com/api/zan
 
 #####Headers
 
@@ -234,9 +234,11 @@
 #####Parameters  
 
 	"album_id" : 7438 (int)
-	"zan" : YES (bool)
+	"zan" : 1 (int)
 	"user_id" : 537 (int)
-
+初期调试解释：	"album_id" : 1或者2 (int)
+	"zan" : 1 (int)因为php里boolean存mysql里是tinyint，所以用int就可以了。然后只需要post 1给到我，第一次会返回zan ： 1，再post就会返回0，我这边做了判断。
+	"user_id" : 1或者2或者3 (int)
 #####Response
 
 	{
@@ -253,7 +255,8 @@
 
 #####Method
 
-	Post http://112.74.106.192/Beautiful_Day/App/comment
+	Post http://www.dev4love.com//api/comment
+	
 
 #####Headers
 
@@ -265,20 +268,22 @@
 
 #####Parameters  
 
-	"album_id" : 4724 (int)
+	"album_id" : 1 (int)
 	"content" : "bilibili"
-	"user_id" : 537 (int)
+	"user_id" : 2 (int)
 
 #####Response
 
 	{
-	"success" : YES (bool)
+	"success" : 1 (int)
 	"comment" : {
+			"comment_id" : 333 (int)
 			"album_id" : 4724 (int)
 			"content" : "bilibili"
 			"user_id" : 537 (int)
 			"user_name" : "xxxx"
-			“time” : "2016-04-14 15:25"
+			“created_at” : "2016-05-18 15:25"
+			“updated_at” : "2016-05-18 15:25"
 			}
 	}
 	

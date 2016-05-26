@@ -21,36 +21,34 @@ class ZanController extends Controller
         $userid = $request->input('user_id');
 
         $zan_status = DB::table('zan_data')->where('user_id', $userid)->where('album_id',$albumid)->value('zan');
+        $username = DB::table('zan_data')->where('user_id', $userid)->where('album_id',$albumid)->value('user_name');
         $zaninfo = zan_data::where('album_id',$albumid)->where('user_id',$userid)->get()->toArray();
         //return $results;
         //'updated_at'=>$dayinfo['updated_at'],
 //return $zan_status;
-        if ($zan_status = '') {
+        if (empty($username)) {
             $zan_table = new zan_data();
             $zan_table->zan = $request->zan;
             $zan_table->album_id = $request->album_id;
             $zan_table->user_id = $request->user_id;
 
+            $name = DB::table('user_data')->where('user_id', $userid)->value('user_name');
+            $zan_table->user_name = $name;
             $zan_table->save();
             $zaninfo = zan_data::where('album_id',$albumid)->where('user_id',$userid)->get()->toArray();
-            return 'return $zan_status'.$zan_status;
         }
         else{
-            if ($zan_status =1) {
+            if ($zan_status == 1) {
                 zan_data::where('zan', 1)
                     ->where('album_id', $albumid)
                     ->where('user_id', $userid)
                     ->update(['zan' => 0]);
-                return 2;
-
             }
             else{
                 zan_data::where('zan', 0)
                     ->where('album_id', $albumid)
                     ->where('user_id', $userid)
                     ->update(['zan' => 1]);
-                return 3;
-
             }
         }
 
