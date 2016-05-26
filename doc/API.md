@@ -243,7 +243,7 @@
 
 	{
 	"zan" : NO (bool)
-	"timeStamp" : 474347384 (double) 
+	"updated_at" : 474347384 (double) 
 	}
 
 
