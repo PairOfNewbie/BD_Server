@@ -44,7 +44,7 @@ class AlbumController extends Controller
         $commentinfo = comment_data::where('album_id',$albumid)->get()->toArray();
         $zaninfo = zan_data::where('album_id',$albumid)->get()->toArray();
 
-        
+
         return \Response::json([
             'zan'=>1,
             'albuminfo'=>$albuminfo[0],
@@ -52,6 +52,7 @@ class AlbumController extends Controller
             'zanlist'=>$this->transformCollection_zan($zaninfo)
         ]);
     }
+    
 
     private function transformCollection_comment($dayinfo)
     {

@@ -19,6 +19,8 @@ Route::post('api/zan','api\v1\ZanController@zan');
 
 Route::post('api/comment','api\v1\CommentController@comment');
 
+Route::post('api/commentlist','api\v1\CommentController@fetch_comment_list');
+
 //Route::get('/',function(){
 //$results = DB::table('users')->where('id',1)->get();
 //$results = DB::table('users')

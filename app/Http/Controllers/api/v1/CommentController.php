@@ -40,8 +40,37 @@ class CommentController extends Controller
 
 
     }
-    
 
+
+    public function fetch_comment_list(Request $request)
+    {
+        $albumid = $request->input('album_id');
+        $total_num = comment_data::count();
+        $page_num = $request->input('pagination');
+        $onepage_commentnum = $request->input('onepage_maxcomment');
+
+        if(empty($page_num))
+            $page_num = 1;
+        //$comment = comment_data::where('date','<=',$date)->orderBy('created_at', 'desc')->take($onepage_commentnum)->get();
+
+        $comment = DB::table('comment_data')->skip(($page_num-1)*$onepage_commentnum)
+            ->take($onepage_commentnum)->get();//->toArray();
+
+
+
+        return \Response::json([
+            'Success'=>1,
+            'album_id'=>$albumid,
+            'pagination'=>$page_num,
+            'comment'=>$comment,
+        ]);
+
+
+
+
+    }
+    
+    
 
 }
 
