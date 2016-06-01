@@ -53,7 +53,7 @@ class CommentController extends Controller
             $page_num = 1;
         //$comment = comment_data::where('date','<=',$date)->orderBy('created_at', 'desc')->take($onepage_commentnum)->get();
 
-        $comment = DB::table('comment_data')->orderBy('created_at', 'asc')->skip(($page_num-1)*$onepage_commentnum)
+        $comment = DB::table('comment_data')->orderBy('created_at', 'desc')->skip(($page_num-1)*$onepage_commentnum)
             ->take($onepage_commentnum)->get();
 
 

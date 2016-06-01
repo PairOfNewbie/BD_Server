@@ -41,7 +41,7 @@ class AlbumController extends Controller
         $albumid = $request->input('album_id');
         $albuminfo = album_data::where('album_id',$albumid)->get()->toArray();
 
-        $commentinfo = comment_data::where('album_id',$albumid)->get()->toArray();
+        $commentinfo = comment_data::where('album_id',$albumid)->orderBy('created_at', 'desc')->get()->toArray();
         $zaninfo = zan_data::where('album_id',$albumid)->get()->toArray();
 
 
