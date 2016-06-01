@@ -9,7 +9,14 @@
 * ####[comment](#4)  
 * ####[fetch comment list](#5)
  
- 
+***
+
+###Latest modification(undone):
+
+1. zan 字段调整
+2. fetch album detail info comment list 逆序
+
+***
 
 ####Base configure
 #####BaseURL
@@ -242,8 +249,14 @@
 #####Response
 
 	{
-	"zan" : NO (bool)
-	"updated_at" : 474347384 (double) 
+	"success" : 1 (int)
+	"zan" : {
+			"zan_id" : 333 (int)
+			"zan_status" : 1 (int)
+			"album_id" : 4724 (int)
+			"user_id" : 537 (int)
+			“updated_at” : "2016-05-18 15:25"
+			}
 	}
 
 
