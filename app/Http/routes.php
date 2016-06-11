@@ -17,7 +17,6 @@ Route::post('api/oneday','api\v1\AlbumController@getonedayinfo');
 
 Route::post('api/zan','api\v1\ZanController@zan');
 
-Route::post('api/comment','api\v1\CommentController@comment');
 
 Route::post('api/commentlist','api\v1\CommentController@fetch_comment_list');
 
@@ -42,11 +41,14 @@ $api->version('v1', function($api){
 
         //$api->post('oneday','AlbuminfoController@getonedayinfo');
 
-        //$api->group(['middleware' => 'jwt.auth'],function($api){
         $api->post('daylist','AlbuminfoController@fetchdayinfolist');
 
         $api->post('albuminfo','AlbuminfoController@fetchalbuminfolist');
-        //});
+        $api->post('register','AuthController@register');
+
+        $api->group(['middleware' => 'jwt.auth'],function($api){
+        Route::post('api/comment','api\v1\CommentController@comment');
+        });
     });
 });
 

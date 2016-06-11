@@ -21,7 +21,7 @@ class AuthController extends Controller
 //            'password'=>Hash::make('1234'),
 //        ]);
         // grab credentials from the request
-        $credentials = $request->only('name', 'password');
+        $credentials = $request->only('user_name', 'password');
 
         try {
             // attempt to verify the credentials and create a token for the user
@@ -39,11 +39,12 @@ class AuthController extends Controller
 
     public function register(Request $request){
         $newUser =[
-            'user_name'=>$request->get('name') //weixin data
+            'user_name'=>$request->get('name'),
+            'password'=>bcrypt($request->get('password')),
         ];
 
-        $user = userdata::create($newUser);
-        $token = JWTAuth::fromser($user);
+        $user = user_data::create($newUser);
+        $token = JWTAuth::fromUser($user);
         return response()->json(compact('token'));
     }
 }
