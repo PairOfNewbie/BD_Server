@@ -40,12 +40,14 @@
 
 <h2 id="0">Register
 #####Description
-使用第三方进行注册，之后默认登录
+//使用第三方进行注册，之后默认登录
+
+暂时使用注册页面，注册后登录
 
 #####Method
 
 	// todo
-	Post http://112.74.106.192/Beautiful_Day/App/index.php
+	Post http://www.dev4love.com/api/register
 
 #####Headers
 
@@ -57,17 +59,26 @@
 
 #####Parameters  
 
-	"user_id" : 4573 (int)
+
 	"user_name" : "jason"
-	"user_img" : "url"
+	"password" : "xxxxxxx"
 	// todo
 
 #####Response
+用户名被占用会返回
+<pre><code>
+{
+  "status": "occupied"
+}
+</pre></code>
 
-	{
-	"success" : YES (bool)
-	}
-
+注册成功则返回
+<pre><code>
+{
+  "status": "success",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjU5MjU2NTQsImV4cCI6MTQ2NTkyOTI1NCwibmJmIjoxNDY1OTI1NjU0LCJqdGkiOiJhMGZkZDQ3OWY4ZmJiZjljNjZjY2ViZTAzYTZlZDIzZCJ9.gL3Hx8W1a_skFnRKn6Bl4j1HirETlDR8LKyHNUHdI70"
+}
+</pre></code>
 ***
 
 <h2 id="1">fetch one day info

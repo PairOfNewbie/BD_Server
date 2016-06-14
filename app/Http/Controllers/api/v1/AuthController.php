@@ -38,13 +38,28 @@ class AuthController extends Controller
     }
 
     public function register(Request $request){
+
+
         $newUser =[
             'user_name'=>$request->get('name'),
             'password'=>bcrypt($request->get('password')),
         ];
+        $name = $request->get('name');
+        $db_username = user_data::where('user_name',$name)->get();
+        if($db_username != '[]'){
+            //json_encode('')
+            return \Response::json([
+                'status'=>'occupied'
+            ]);
+        }
 
         $user = user_data::create($newUser);
         $token = JWTAuth::fromUser($user);
-        return response()->json(compact('token'));
+        //return response()->json(compact('token'));
+        return \Response::json([
+            'status'=>'success',
+            'token'=>$token,
+        ]);
     }
+
 }
