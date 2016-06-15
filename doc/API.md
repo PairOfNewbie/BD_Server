@@ -15,7 +15,8 @@
 
 1. zan 字段调整
 2. fetch album detail info comment list 逆序
-
+3. 添加register
+4. album info中添加了location和song_name两个字段
 ***
 
 ####Base configure
@@ -108,12 +109,14 @@
 <pre><code>
 {
   "dayinfo": {
-    "album_id": 1,
+    "album_id": "2",
     "date": "2016-05-18",
-    "text": "justfortest",
+    "location": "Luzern,瑞士",
+    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+    "song_name": "The Wolven Storm",
     "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
-    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+    "page_url": "http://objccn.io/issue-19-0/"
   }
 }
 </pre></code>
@@ -154,20 +157,24 @@
 {
   "album_datas": [
     {
-      "album_id": 1,
+      "album_id": "2",
       "date": "2016-05-18",
-      "text": "justfortest",
+      "location": "Luzern,瑞士",
+      "text": "我的心思不为谁而停留，我的征途是星辰大海",
+      "song_name": "The Wolven Storm",
       "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
-      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+      "page_url": "http://objccn.io/issue-19-0/"
     },
     {
-      "album_id": 2,
+      "album_id": "3",
       "date": "2016-05-17",
-      "text": "test",
+      "location": "Melbourne,澳大利亚",
+      "text": "我像波浪一样摇摆，在梦想的生活和生活过的梦之间",
+      "song_name": "彩虹",
       "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
-      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-17.mp3",
+      "page_url": "http://objccn.io/issue-1-0/"
     }
   ]
 }
@@ -201,12 +208,14 @@
 {
   "zan": 1,
   "albuminfo": {
-    "album_id": 2,
-    "date": "2016-05-17",
-    "text": "test",
-    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
-    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    "album_id": "2",
+    "date": "2016-05-18",
+    "location": "Luzern,瑞士",
+    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+    "song_name": "The Wolven Storm",
+    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+    "page_url": "http://objccn.io/issue-19-0/"
   },
   "commentlist": [
     {
