@@ -41,10 +41,10 @@ class AuthController extends Controller
 
 
         $newUser =[
-            'user_name'=>$request->get('name'),
+            'user_name'=>$request->get('user_name'),
             'password'=>bcrypt($request->get('password')),
         ];
-        $name = $request->get('name');
+        $name = $request->get('user_name');
         $db_username = user_data::where('user_name',$name)->get();
         if($db_username != '[]'){
             //json_encode('')
