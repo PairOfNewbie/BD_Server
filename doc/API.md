@@ -17,6 +17,8 @@
 2. fetch album detail info comment list 逆序
 3. 添加register
 4. album info中添加了location和song_name两个字段
+5. login 接口
+6. register返回增加一个userid字段
 ***
 
 ####Base configure
