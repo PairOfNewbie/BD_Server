@@ -20,6 +20,12 @@ Route::post('api/zan','api\v1\ZanController@zan');
 
 Route::post('api/commentlist','api\v1\CommentController@fetch_comment_list');
 
+
+Route::get('/api/upload/login','api\v1\upload\LoginController@login');
+
+
+
+
 //Route::get('/',function(){
 //$results = DB::table('users')->where('id',1)->get();
 //$results = DB::table('users')
@@ -37,7 +43,7 @@ $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function($api){
     $api->group(['namespace' =>'App\Http\Controllers\api\v1'],function($api){
-        $api->post('admin/login','AuthController@authenticate');
+        $api->post('login','AuthController@authenticate');
 
         //$api->post('oneday','AlbuminfoController@getonedayinfo');
 
@@ -45,6 +51,8 @@ $api->version('v1', function($api){
 
         $api->post('albuminfo','AlbuminfoController@fetchalbuminfolist');
         $api->post('register','AuthController@register');
+
+        
 
         $api->group(['middleware' => 'jwt.auth'],function($api){
         Route::post('api/comment','api\v1\CommentController@comment');

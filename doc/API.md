@@ -15,7 +15,10 @@
 
 1. zan 字段调整
 2. fetch album detail info comment list 逆序
-
+3. 添加register
+4. album info中添加了location和song_name两个字段
+5. login 接口
+6. register返回增加一个userid字段
 ***
 
 ####Base configure
@@ -76,9 +79,49 @@
 <pre><code>
 {
   "status": "success",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjU5MjU2NTQsImV4cCI6MTQ2NTkyOTI1NCwibmJmIjoxNDY1OTI1NjU0LCJqdGkiOiJhMGZkZDQ3OWY4ZmJiZjljNjZjY2ViZTAzYTZlZDIzZCJ9.gL3Hx8W1a_skFnRKn6Bl4j1HirETlDR8LKyHNUHdI70"
+  "user_id": 38,
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjYyNjg0NDMsImV4cCI6MTQ2NjI3MjA0MywibmJmIjoxNDY2MjY4NDQzLCJqdGkiOiIyOGU2ZmIxMzk3NTg2MTZjYmJmYWE0OTRkMjI4OGZjNCJ9.5swKoCAV3uJWWFZ4ZKcULBaBFc6ZlD7lutWsgthlHYE"
 }
 </pre></code>
+
+***
+
+<h2 id="0.1">Login
+#####Description
+用户登录
+
+
+#####Method
+
+	// todo
+	Post http://www.dev4love.com/api/login
+
+#####Headers
+
+	nil
+
+#####Body   
+
+	nil
+
+#####Parameters  
+
+
+	"user_name" : "jason"
+	"password" : "xxxxxxx"
+	// todo
+
+#####Response
+
+登录成功则返回
+<pre><code>
+{
+  "status": "success",
+  "user_id": 37,
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvbG9naW4iLCJpYXQiOjE0NjYyNjg0MDMsImV4cCI6MTQ2NjI3MjAwMywibmJmIjoxNDY2MjY4NDAzLCJqdGkiOiI0YTlkN2E5NmJlOGQwZTFkM2U3MjQ4NzkyOGNmYTk3MyJ9.Rgwt3qSaIl6lqyT2PsA1SheiyiLhFem4DjDI3bRh9No"
+}
+</pre></code>
+
 ***
 
 <h2 id="1">fetch one day info
@@ -108,12 +151,14 @@
 <pre><code>
 {
   "dayinfo": {
-    "album_id": 1,
+    "album_id": "2",
     "date": "2016-05-18",
-    "text": "justfortest",
+    "location": "Luzern,瑞士",
+    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+    "song_name": "The Wolven Storm",
     "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
-    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+    "page_url": "http://objccn.io/issue-19-0/"
   }
 }
 </pre></code>
@@ -154,20 +199,24 @@
 {
   "album_datas": [
     {
-      "album_id": 1,
+      "album_id": "2",
       "date": "2016-05-18",
-      "text": "justfortest",
+      "location": "Luzern,瑞士",
+      "text": "我的心思不为谁而停留，我的征途是星辰大海",
+      "song_name": "The Wolven Storm",
       "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.mp3",
-      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+      "page_url": "http://objccn.io/issue-19-0/"
     },
     {
-      "album_id": 2,
+      "album_id": "3",
       "date": "2016-05-17",
-      "text": "test",
+      "location": "Melbourne,澳大利亚",
+      "text": "我像波浪一样摇摆，在梦想的生活和生活过的梦之间",
+      "song_name": "彩虹",
       "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
-      "page_url": "http://www.mafengwo.cn/i/5382755.html"
+      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-17.mp3",
+      "page_url": "http://objccn.io/issue-1-0/"
     }
   ]
 }
@@ -201,12 +250,14 @@
 {
   "zan": 1,
   "albuminfo": {
-    "album_id": 2,
-    "date": "2016-05-17",
-    "text": "test",
-    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
-    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+    "album_id": "2",
+    "date": "2016-05-18",
+    "location": "Luzern,瑞士",
+    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+    "song_name": "The Wolven Storm",
+    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+    "page_url": "http://objccn.io/issue-19-0/"
   },
   "commentlist": [
     {

@@ -16,13 +16,10 @@ class AuthController extends Controller
     //
     public function authenticate(Request $request)
     {
-//        Admin::insert([
-//            'name'=>'test1',
-//            'password'=>Hash::make('1234'),
-//        ]);
-        // grab credentials from the request
-        $credentials = $request->only('user_name', 'password');
 
+        // grab credentials from the request
+        $credentials = $request->only('uid', 'password');
+        $uid = $request->get('uid');
         try {
             // attempt to verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($credentials)) {
@@ -32,32 +29,43 @@ class AuthController extends Controller
             // something went wrong whilst attempting to encode the token
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-
+        $userdatas = user_data::where('uid',$uid)->get();
+        $user_id = $userdatas[0]->user_id;//get current user_id
         // all good so return the token
-        return response()->json(compact('token'));
+        //return response()->json(compact('token'));
+        return \Response::json([
+            'status'=>'success',
+            'user_id'=>$user_id,
+            'token'=>$token,
+        ]);
     }
 
     public function register(Request $request){
 
 
         $newUser =[
-            'user_name'=>$request->get('name'),
+            'uid'=>$request->get('uid'),
+            'user_name'=>$request->get('user_name'),
             'password'=>bcrypt($request->get('password')),
         ];
-        $name = $request->get('name');
-        $db_username = user_data::where('user_name',$name)->get();
-        if($db_username != '[]'){
-            //json_encode('')
+        $uid = $request->get('uid');
+        $db_uid = user_data::where('uid',$uid)->get();//check uid is occupied or not
+        if($db_uid != '[]'){
             return \Response::json([
                 'status'=>'occupied'
             ]);
         }
 
-        $user = user_data::create($newUser);
+        $user = user_data::create($newUser);//save to database
+
+        $userdatas = user_data::where('uid',$uid)->get();
+        $user_id = $userdatas[0]->user_id;//get current user_id
+
         $token = JWTAuth::fromUser($user);
         //return response()->json(compact('token'));
         return \Response::json([
             'status'=>'success',
+            'user_id'=>$user_id,
             'token'=>$token,
         ]);
     }
