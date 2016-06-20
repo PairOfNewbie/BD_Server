@@ -128,8 +128,9 @@ uid已被注册过，返回
 <pre><code>
 {
   "status": "success",
-  "user_id": 37,
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvbG9naW4iLCJpYXQiOjE0NjYyNjg0MDMsImV4cCI6MTQ2NjI3MjAwMywibmJmIjoxNDY2MjY4NDAzLCJqdGkiOiI0YTlkN2E5NmJlOGQwZTFkM2U3MjQ4NzkyOGNmYTk3MyJ9.Rgwt3qSaIl6lqyT2PsA1SheiyiLhFem4DjDI3bRh9No"
+  "user_id": 13,
+  "user_name": "test4321",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cLzExMi43NC4xMDYuMTkyXC9hcGlcL2xvZ2luIiwiaWF0IjoxNDY2NDEyNzE2LCJleHAiOjE0NjY0MTYzMTYsIm5iZiI6MTQ2NjQxMjcxNiwianRpIjoiNmY3ZmVhNzM4ZDhlYzc2Mjk2NGRkNTM5OGRjMTEyOGIifQ.q_ohIm-8oN0-4ioN5tihXTNW_EHpiWS2_UGlWXhiCJc"
 }
 </pre></code>
 

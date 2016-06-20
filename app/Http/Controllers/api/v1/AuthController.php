@@ -37,11 +37,13 @@ class AuthController extends Controller
             return response()->json(['status' => 'could_not_create_token'], 500);
         }
         $user_id = $userdatas[0]->user_id;//get current user_id
-        // all good so return the token
+        $user_name = $userdatas[0]->user_name;//get current user_id
+	// all good so return the token
         //return response()->json(compact('token'));
         return \Response::json([
             'status'=>'success',
             'user_id'=>$user_id,
+	    'user_name'=>$user_name,
             'token'=>$token,
         ]);
     }
