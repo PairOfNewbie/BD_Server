@@ -19,17 +19,23 @@ class AuthController extends Controller
 
         // grab credentials from the request
         $credentials = $request->only('uid', 'password');
-        $uid = $request->get('uid');
+
+	$uid = $request->get('uid');        
+	$userdatas = user_data::where('uid',$uid)->get();
+        if($userdatas == '[]'){
+            return \Response::json([
+                'status'=>'unregister'
+            ]);
+        }
         try {
             // attempt to verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 401);
+                return response()->json(['status' => 'wrong_password'], 401);
             }
         } catch (JWTException $e) {
             // something went wrong whilst attempting to encode the token
-            return response()->json(['error' => 'could_not_create_token'], 500);
+            return response()->json(['status' => 'could_not_create_token'], 500);
         }
-        $userdatas = user_data::where('uid',$uid)->get();
         $user_id = $userdatas[0]->user_id;//get current user_id
         // all good so return the token
         //return response()->json(compact('token'));

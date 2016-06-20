@@ -19,6 +19,7 @@
 4. album info中添加了location和song_name两个字段
 5. login 接口
 6. register返回增加一个userid字段
+7. login和register添加一个uid字段作为登录验证。
 ***
 
 ####Base configure
@@ -68,7 +69,7 @@
 	// todo
 
 #####Response
-uid已被注册过会返回
+uid已被注册过，返回
 <pre><code>
 {
   "status": "occupied"
@@ -112,6 +113,16 @@ uid已被注册过会返回
 	// todo
 
 #####Response
+登录密码错误返回
+{
+  "status": "wrong_password"
+}
+
+登录账户错误返回
+{
+  "status": "unregister"
+}
+
 
 登录成功则返回
 <pre><code>
