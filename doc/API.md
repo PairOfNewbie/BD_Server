@@ -62,13 +62,13 @@
 
 #####Parameters  
 
-
+	"uid" : "18468523654" //手机号码
 	"user_name" : "jason"
 	"password" : "xxxxxxx"
 	// todo
 
 #####Response
-用户名被占用会返回
+uid已被注册过会返回
 <pre><code>
 {
   "status": "occupied"
@@ -107,7 +107,7 @@
 #####Parameters  
 
 
-	"user_name" : "jason"
+	"uid" : "18468523654" //手机号码
 	"password" : "xxxxxxx"
 	// todo
 
