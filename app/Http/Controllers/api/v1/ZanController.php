@@ -46,12 +46,14 @@ class ZanController extends Controller
             $zaninfo = zan_data::where('album_id',$albumid)->where('user_id',$userid)->get()->toArray();
         }
 
-
-
+	$return_zaninfo = $this->transformCollection_zan($zaninfo);
+	
 
 
         return \Response::json([
-            'zaninfo'=>$this->transformCollection_zan($zaninfo)
+            //'zaninfo'=>$this->transformCollection_zan($zaninfo)
+	    'success'=>'1',
+	    'zaninfo'=>$return_zaninfo[0],
         ]);
 
     }

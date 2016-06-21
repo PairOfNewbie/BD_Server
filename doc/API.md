@@ -77,13 +77,13 @@ uid已被注册过，返回
 </pre></code>
 
 注册成功则返回
-<pre><code>
-{
-  "status": "success",
-  "user_id": 38,
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjYyNjg0NDMsImV4cCI6MTQ2NjI3MjA0MywibmJmIjoxNDY2MjY4NDQzLCJqdGkiOiIyOGU2ZmIxMzk3NTg2MTZjYmJmYWE0OTRkMjI4OGZjNCJ9.5swKoCAV3uJWWFZ4ZKcULBaBFc6ZlD7lutWsgthlHYE"
-}
-</pre></code>
+
+	{
+	  "status": "success",
+	  "user_id": 38,
+	  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjYyNjg0NDMsImV4cCI6MTQ2NjI3MjA0MywibmJmIjoxNDY2MjY4NDQzLCJqdGkiOiIyOGU2ZmIxMzk3NTg2MTZjYmJmYWE0OTRkMjI4OGZjNCJ9.5swKoCAV3uJWWFZ4ZKcULBaBFc6ZlD7lutWsgthlHYE"
+	}
+
 
 ***
 
@@ -125,14 +125,14 @@ uid已被注册过，返回
 
 
 登录成功则返回
-<pre><code>
-{
-  "status": "success",
-  "user_id": 13,
-  "user_name": "test4321",
-  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cLzExMi43NC4xMDYuMTkyXC9hcGlcL2xvZ2luIiwiaWF0IjoxNDY2NDEyNzE2LCJleHAiOjE0NjY0MTYzMTYsIm5iZiI6MTQ2NjQxMjcxNiwianRpIjoiNmY3ZmVhNzM4ZDhlYzc2Mjk2NGRkNTM5OGRjMTEyOGIifQ.q_ohIm-8oN0-4ioN5tihXTNW_EHpiWS2_UGlWXhiCJc"
-}
-</pre></code>
+
+	{
+	  "status": "success",
+	  "user_id": 13,
+	  "user_name": "test4321",
+	  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cLzExMi43NC4xMDYuMTkyXC9hcGlcL2xvZ2luIiwiaWF0IjoxNDY2NDEyNzE2LCJleHAiOjE0NjY0MTYzMTYsIm5iZiI6MTQ2NjQxMjcxNiwianRpIjoiNmY3ZmVhNzM4ZDhlYzc2Mjk2NGRkNTM5OGRjMTEyOGIifQ.q_ohIm-8oN0-4ioN5tihXTNW_EHpiWS2_UGlWXhiCJc"
+	}
+
 
 ***
 
@@ -160,20 +160,20 @@ uid已被注册过，返回
 	“2016-05-18”（日期的格式需要占位0）
 
 #####Response
-<pre><code>
-{
-  "dayinfo": {
-    "album_id": "2",
-    "date": "2016-05-18",
-    "location": "Luzern,瑞士",
-    "text": "我的心思不为谁而停留，我的征途是星辰大海",
-    "song_name": "The Wolven Storm",
-    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
-    "page_url": "http://objccn.io/issue-19-0/"
-  }
-}
-</pre></code>
+
+	{
+	  "dayinfo": {
+	    "album_id": "2",
+	    "date": "2016-05-18",
+	    "location": "Luzern,瑞士",
+	    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+	    "song_name": "The Wolven Storm",
+	    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+	    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+	    "page_url": "http://objccn.io/issue-19-0/"
+	  }
+	}
+
 
 ***
 
@@ -207,32 +207,32 @@ uid已被注册过，返回
 
 #####Response
 
-<pre><code>
-{
-  "album_datas": [
-    {
-      "album_id": "2",
-      "date": "2016-05-18",
-      "location": "Luzern,瑞士",
-      "text": "我的心思不为谁而停留，我的征途是星辰大海",
-      "song_name": "The Wolven Storm",
-      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
-      "page_url": "http://objccn.io/issue-19-0/"
-    },
-    {
-      "album_id": "3",
-      "date": "2016-05-17",
-      "location": "Melbourne,澳大利亚",
-      "text": "我像波浪一样摇摆，在梦想的生活和生活过的梦之间",
-      "song_name": "彩虹",
-      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-17.mp3",
-      "page_url": "http://objccn.io/issue-1-0/"
-    }
-  ]
-}
-</pre></code>
+
+	{
+	  "album_datas": [
+	    {
+	      "album_id": "2",
+	      "date": "2016-05-18",
+	      "location": "Luzern,瑞士",
+	      "text": "我的心思不为谁而停留，我的征途是星辰大海",
+	      "song_name": "The Wolven Storm",
+	      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+	      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+	      "page_url": "http://objccn.io/issue-19-0/"
+	    },
+	    {
+	      "album_id": "3",
+	      "date": "2016-05-17",
+	      "location": "Melbourne,澳大利亚",
+	      "text": "我像波浪一样摇摆，在梦想的生活和生活过的梦之间",
+	      "song_name": "彩虹",
+	      "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
+	      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-17.mp3",
+	      "page_url": "http://objccn.io/issue-1-0/"
+	    }
+	  ]
+	}
+
 
 ***
 
@@ -258,41 +258,41 @@ uid已被注册过，返回
 	"album_id" : 1或者2 (int),"user_id" : 1或者2或者3 (int)
 
 #####Response
-<pre><code>
-{
-  "zan": 1,
-  "albuminfo": {
-    "album_id": "2",
-    "date": "2016-05-18",
-    "location": "Luzern,瑞士",
-    "text": "我的心思不为谁而停留，我的征途是星辰大海",
-    "song_name": "The Wolven Storm",
-    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
-    "page_url": "http://objccn.io/issue-19-0/"
-  },
-  "commentlist": [
-    {
-      "album_id": 2,
-      "content": "comment test 2016-05-24-2317",
-      "user_id": 2
-    },
-    {
-      "album_id": 2,
-      "content": "111111111",
-      "user_id": 3
-    }
-  ],
-  "zanlist": [
-    {
-      "user_name": "lucy"
-    },
-    {
-      "user_name": "lily"
-    }
-  ]
-}
-</code></pre>
+
+	{
+	  "zan": 1,
+	  "albuminfo": {
+	    "album_id": "2",
+	    "date": "2016-05-18",
+	    "location": "Luzern,瑞士",
+	    "text": "我的心思不为谁而停留，我的征途是星辰大海",
+	    "song_name": "The Wolven Storm",
+	    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-18.png",
+	    "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-18.mp3",
+	    "page_url": "http://objccn.io/issue-19-0/"
+	  },
+	  "commentlist": [
+	    {
+	      "album_id": 2,
+	      "content": "comment test 2016-05-24-2317",
+	      "user_id": 2
+	    },
+	    {
+	      "album_id": 2,
+	      "content": "111111111",
+	      "user_id": 3
+	    }
+	  ],
+	  "zanlist": [
+	    {
+	      "user_name": "lucy"
+	    },
+	    {
+	      "user_name": "lily"
+	    }
+	  ]
+	}
+
 
 ***
 
@@ -317,20 +317,16 @@ uid已被注册过，返回
 	"album_id" : 7438 (int)
 	"zan" : 1 (int)
 	"user_id" : 537 (int)
-初期调试解释：	"album_id" : 1或者2 (int)
-	"zan" : 1 (int)因为php里boolean存mysql里是tinyint，所以用int就可以了。然后只需要post 1给到我，第一次会返回zan ： 1，再post就会返回0，我这边做了判断。
-	"user_id" : 1或者2或者3 (int)
+
 #####Response
 
+
 	{
-	"success" : 1 (int)
-	"zan" : {
-			"zan_id" : 333 (int)
-			"zan_status" : 1 (int)
-			"album_id" : 4724 (int)
-			"user_id" : 537 (int)
-			“updated_at” : "2016-05-18 15:25"
-			}
+	  "success": "1",
+	  "zaninfo": {
+	    "zan": "1",
+	    "updated_at": "2016-06-21 16:02:07"
+	  }
 	}
 
 
@@ -382,7 +378,7 @@ uid已被注册过，返回
 
 #####Method
 
-	Post http://112.74.106.192/Beautiful_Day/App/index.php
+	Post http://www.dev4love.com/api/commentlist
 
 #####Headers
 
@@ -394,29 +390,63 @@ uid已被注册过，返回
 
 #####Parameters  
 
-	"album_id" : 4724 (int)
-	"lastcommentid" : 7525 (int)
-	"quantity" : 20 (int)
+	"album_id" : 2 (int)
+	"onepage_maxcomment" : 5 (int)
+	"pagination" : 3 (int)
+
+######onepage_maxcomment为每页的的最大显示评论数。pagination为当前页面的页码
 
 #####Response
 
 	{
-	"success" : YES (bool)
-	"album_id" : 4724 (int)
-	"quantity" : 20 (int)		
-	"commentlist" : [
-			{
-			"user_name" : "jason"
-			"content" : "bilibili"
-			"comment_id" : 537 (int)
-			“time” : "2016-04-14 15:25"
-			},
-			{
-			"user_name" : "jason"
-			"content" : "bilibili"
-			"comment_id" : 537 (int)
-			“time” : "2016-04-14 15:25"
-			},
-			...
-		]
+	  "Success": 1,
+	  "album_id": "2",
+	  "pagination": "3",
+	  "comment": [
+	    {
+	      "comment_id": "20",
+	      "album_id": "2",
+	      "content": "hello,this is from jason",
+	      "user_id": "1",
+	      "user_name": "Lily",
+	      "created_at": "2016-05-30 21:05:36",
+	      "updated_at": "2016-05-30 21:05:36"
+	    },
+	    {
+	      "comment_id": "19",
+	      "album_id": "2",
+	      "content": "hello,this is from jason",
+	      "user_id": "1",
+	      "user_name": "Lily",
+	      "created_at": "2016-05-30 21:05:36",
+	      "updated_at": "2016-05-30 21:05:36"
+	    },
+	    {
+	      "comment_id": "18",
+	      "album_id": "2",
+	      "content": "hello,this is from jason",
+	      "user_id": "1",
+	      "user_name": "Lily",
+	      "created_at": "2016-05-30 21:05:36",
+	      "updated_at": "2016-05-30 21:05:36"
+	    },
+	    {
+	      "comment_id": "17",
+	      "album_id": "2",
+	      "content": "hello,this is from jason",
+	      "user_id": "1",
+	      "user_name": "Lily",
+	      "created_at": "2016-05-30 21:05:36",
+	      "updated_at": "2016-05-30 21:05:36"
+	    },
+	    {
+	      "comment_id": "16",
+	      "album_id": "2",
+	      "content": "hello,this is from jason",
+	      "user_id": "1",
+	      "user_name": "Lily",
+	      "created_at": "2016-05-30 21:05:35",
+	      "updated_at": "2016-05-30 21:05:35"
+	    }
+	  ]
 	}
