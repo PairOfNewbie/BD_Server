@@ -255,84 +255,84 @@ uid已被注册过，返回
 
 #####Response
 
-{
-  "zan": 1,
-  "albuminfo": {
-    "album_id": 2,
-    "date": "2016-05-17",
-    "text": "test",
-    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
-    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
-    "page_url": "http://www.mafengwo.cn/i/5382755.html"
-  },
-  "commentlist": [
-    {
-      "comment_id": 11,
-      "album_id": 2,
-      "content": "这个世界还好吗",
-      "user_id": 8,
-      "user_name": "yangce2",
-      "created_at": "2016-06-04 02:46:42",
-      "updated_at": "2016-06-04 02:46:42"
-    },
-    {
-      "comment_id": 10,
-      "album_id": 2,
-      "content": "这个世界还好吗",
-      "user_id": 8,
-      "user_name": "yangce2",
-      "created_at": "2016-06-04 02:45:30",
-      "updated_at": "2016-06-04 02:45:30"
-    },
-    {
-      "comment_id": 4,
-      "album_id": 2,
-      "content": "111111111",
-      "user_id": 3,
-      "user_name": "lucy",
-      "created_at": "2016-05-25 17:31:22",
-      "updated_at": "2016-05-25 17:31:22"
-    },
-    {
-      "comment_id": 1,
-      "album_id": 2,
-      "content": "comment test 2016-05-24-2317",
-      "user_id": 2,
-      "user_name": "john",
-      "created_at": "2016-05-24 05:31:22",
-      "updated_at": "2016-05-24 05:31:22"
-    }
-  ],
-  "zanlist": [
-    {
-      "zan_id": 29,
-      "album_id": 2,
-      "zan": 1,
-      "user_id": 4,
-      "created_at": "2016-06-21 20:32:36",
-      "updated_at": "2016-06-21 20:32:36",
-      "user_name": null
-    },
-    {
-      "zan_id": 30,
-      "album_id": 2,
-      "zan": 1,
-      "user_id": 8,
-      "created_at": "2016-06-21 20:32:48",
-      "updated_at": "2016-06-21 20:32:48",
-      "user_name": "yangce2"
-    },
-    {
-      "zan_id": 28,
-      "album_id": 2,
-      "zan": 1,
-      "user_id": 3,
-      "created_at": "2016-06-21 20:27:18",
-      "updated_at": "2016-06-21 20:34:11",
-      "user_name": "lucy"
-    }
-  ]
-}
+	{
+	  "zan": 1,
+	  "albuminfo": {
+	    "album_id": 2,
+	    "date": "2016-05-17",
+	    "text": "test",
+	    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
+	    "music_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.mp3",
+	    "page_url": "http://www.mafengwo.cn/i/5382755.html"
+	  },
+	  "commentlist": [
+	    {
+	      "comment_id": 11,
+	      "album_id": 2,
+	      "content": "这个世界还好吗",
+	      "user_id": 8,
+	      "user_name": "yangce2",
+	      "created_at": "2016-06-04 02:46:42",
+	      "updated_at": "2016-06-04 02:46:42"
+	    },
+	    {
+	      "comment_id": 10,
+	      "album_id": 2,
+	      "content": "这个世界还好吗",
+	      "user_id": 8,
+	      "user_name": "yangce2",
+	      "created_at": "2016-06-04 02:45:30",
+	      "updated_at": "2016-06-04 02:45:30"
+	    },
+	    {
+	      "comment_id": 4,
+	      "album_id": 2,
+	      "content": "111111111",
+	      "user_id": 3,
+	      "user_name": "lucy",
+	      "created_at": "2016-05-25 17:31:22",
+	      "updated_at": "2016-05-25 17:31:22"
+	    },
+	    {
+	      "comment_id": 1,
+	      "album_id": 2,
+	      "content": "comment test 2016-05-24-2317",
+	      "user_id": 2,
+	      "user_name": "john",
+	      "created_at": "2016-05-24 05:31:22",
+	      "updated_at": "2016-05-24 05:31:22"
+	    }
+	  ],
+	  "zanlist": [
+	    {
+	      "zan_id": 29,
+	      "album_id": 2,
+	      "zan": 1,
+	      "user_id": 4,
+	      "created_at": "2016-06-21 20:32:36",
+	      "updated_at": "2016-06-21 20:32:36",
+	      "user_name": null
+	    },
+	    {
+	      "zan_id": 30,
+	      "album_id": 2,
+	      "zan": 1,
+	      "user_id": 8,
+	      "created_at": "2016-06-21 20:32:48",
+	      "updated_at": "2016-06-21 20:32:48",
+	      "user_name": "yangce2"
+	    },
+	    {
+	      "zan_id": 28,
+	      "album_id": 2,
+	      "zan": 1,
+	      "user_id": 3,
+	      "created_at": "2016-06-21 20:27:18",
+	      "updated_at": "2016-06-21 20:34:11",
+	      "user_name": "lucy"
+	    }
+	  ]
+	}
 
 
 ***
