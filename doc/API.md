@@ -13,13 +13,9 @@
 
 ###Latest modification(undone):
 
-1. zan 字段调整
 2. fetch album detail info comment list 逆序
-3. 添加register
 4. album info中添加了location和song_name两个字段
-5. login 接口
-6. register返回增加一个userid字段
-7. login和register添加一个uid字段作为登录验证。
+6. zan的结构调整，涉及到zan，fetch album detail info这几个接口（todo）
 ***
 
 ####Base configure
@@ -285,10 +281,18 @@ uid已被注册过，返回
 	  ],
 	  "zanlist": [
 	    {
-	      "user_name": "lucy"
+	      "zan_id": 203,
+	      "user_id": 13,
+	      "user_name": "lucy",
+	      "album_id": 29,
+	      "zan_status": 0 (0表示未点赞，或者1已点赞)
 	    },
 	    {
-	      "user_name": "lily"
+	      "zan_id": 204,
+	      "user_id": 14,
+	      "user_name": "tom",
+	      "album_id": 30,
+	      "zan_status": 1 (0表示未点赞，或者1已点赞)
 	    }
 	  ]
 	}
@@ -324,9 +328,12 @@ uid已被注册过，返回
 	{
 	  "success": "1",
 	  "zaninfo": {
-	    "zan": "1",
-	    "updated_at": "2016-06-21 16:02:07"
-	  }
+	      "zan_id": 203,
+	      "user_id": 13,
+	      "user_name": "lucy",
+	      "album_id": 29,
+	      "zan_status": 0 (0表示未点赞，或者1已点赞)
+	    }
 	}
 
 
