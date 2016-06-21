@@ -328,12 +328,14 @@ uid已被注册过，返回
 	{
 	  "success": "1",
 	  "zaninfo": {
-	      "zan_id": 203,
-	      "user_id": 13,
-	      "user_name": "lucy",
-	      "album_id": 29,
-	      "zan_status": 0 (0表示未点赞，或者1已点赞)
-	    }
+	    "zan_id": 27,
+	    "album_id": 3,
+	    "zan": 0,(0表示未点赞，1表示已点赞)
+	    "user_id": 8,
+	    "created_at": "2016-06-21 20:17:56",
+	    "updated_at": "2016-06-21 20:19:06",
+	    "user_name": "yangce2"
+	  }
 	}
 
 

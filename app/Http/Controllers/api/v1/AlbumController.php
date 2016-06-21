@@ -42,14 +42,16 @@ class AlbumController extends Controller
         $albuminfo = album_data::where('album_id',$albumid)->get()->toArray();
 
         $commentinfo = comment_data::where('album_id',$albumid)->orderBy('created_at', 'desc')->get()->toArray();
-        $zaninfo = zan_data::where('album_id',$albumid)->get()->toArray();
+        $zaninfo = zan_data::where('album_id',$albumid)->where('zan',1)->orderBy('updated_at', 'asc')->get()->toArray();
 
 
         return \Response::json([
             'zan'=>1,
             'albuminfo'=>$albuminfo[0],
-            'commentlist'=>$this->transformCollection_comment($commentinfo),
-            'zanlist'=>$this->transformCollection_zan($zaninfo)
+            'commentlist'=>$commentinfo,
+                'zanlist'=>$zaninfo
+//            'commentlist'=>$this->transformCollection_comment($commentinfo),
+//            'zanlist'=>$this->transformCollection_zan($zaninfo)
         ]);
     }
     
