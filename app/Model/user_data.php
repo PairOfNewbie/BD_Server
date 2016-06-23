@@ -13,4 +13,7 @@ class user_data extends Model
     ];
 
     protected $primaryKey = 'user_id';
+ // The attributes that should be casted to native types.
+
+ protected $casts = ['user_id' => 'integer',];
 }
