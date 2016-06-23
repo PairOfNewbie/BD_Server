@@ -15,7 +15,6 @@
 
 2. fetch album detail info comment list 逆序
 4. album info中添加了location和song_name两个字段
-6. zan的结构调整，涉及到zan，fetch album detail info这几个接口（todo）
 ***
 
 ####Base configure
@@ -46,7 +45,6 @@
 
 #####Method
 
-	// todo
 	Post http://www.dev4love.com/api/register
 
 #####Headers
@@ -59,10 +57,12 @@
 
 #####Parameters  
 
+// todo
+	
 	"uid" : "18468523654" //手机号码
 	"user_name" : "jason"
 	"password" : "xxxxxxx"
-	// todo
+
 
 #####Response
 uid已被注册过，返回
@@ -76,7 +76,7 @@ uid已被注册过，返回
 
 	{
 	  "status": "success",
-	  "user_id": 38,
+	  "user_id": 38,(int)
 	  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cL2hvbWVzdGVhZC5hcHBcL2FwaVwvcmVnaXN0ZXIiLCJpYXQiOjE0NjYyNjg0NDMsImV4cCI6MTQ2NjI3MjA0MywibmJmIjoxNDY2MjY4NDQzLCJqdGkiOiIyOGU2ZmIxMzk3NTg2MTZjYmJmYWE0OTRkMjI4OGZjNCJ9.5swKoCAV3uJWWFZ4ZKcULBaBFc6ZlD7lutWsgthlHYE"
 	}
 
@@ -90,7 +90,6 @@ uid已被注册过，返回
 
 #####Method
 
-	// todo
 	Post http://www.dev4love.com/api/login
 
 #####Headers
@@ -103,10 +102,10 @@ uid已被注册过，返回
 
 #####Parameters  
 
+//todo 
 
 	"uid" : "18468523654" //手机号码
 	"password" : "xxxxxxx"
-	// todo
 
 #####Response
 登录密码错误返回
@@ -124,7 +123,7 @@ uid已被注册过，返回
 
 	{
 	  "status": "success",
-	  "user_id": 13,
+	  "user_id": 13,(int)
 	  "user_name": "test4321",
 	  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOm51bGwsImlzcyI6Imh0dHA6XC9cLzExMi43NC4xMDYuMTkyXC9hcGlcL2xvZ2luIiwiaWF0IjoxNDY2NDEyNzE2LCJleHAiOjE0NjY0MTYzMTYsIm5iZiI6MTQ2NjQxMjcxNiwianRpIjoiNmY3ZmVhNzM4ZDhlYzc2Mjk2NGRkNTM5OGRjMTEyOGIifQ.q_ohIm-8oN0-4ioN5tihXTNW_EHpiWS2_UGlWXhiCJc"
 	}
@@ -138,8 +137,7 @@ uid已被注册过，返回
 
 #####Method
 
-	// todo
-	Post http://www.dev4love.com/api/oneday
+	Post http://www.dev4love.com/api/albumdetail
 #####Headers
 
 	nil
@@ -159,7 +157,7 @@ uid已被注册过，返回
 
 	{
 	  "dayinfo": {
-	    "album_id": "2",
+	    "album_id": 2,(int)
 	    "date": "2016-05-18",
 	    "location": "Luzern,瑞士",
 	    "text": "我的心思不为谁而停留，我的征途是星辰大海",
@@ -179,7 +177,6 @@ uid已被注册过，返回
 
 #####Method
 
-	// todo
 	Post http://www.dev4love.com/api/daylist
 
 #####Headers
@@ -193,7 +190,7 @@ uid已被注册过，返回
 #####Parameters  
 
 	"startdate" : "2016-05-18"
-	"count" : 2
+	"count" : 2(int)
 	explaination：  
 	“2016-05-18”（日期的格式需要占位0）
 	“startdate” 返回时包括该日期
@@ -207,7 +204,7 @@ uid已被注册过，返回
 	{
 	  "album_datas": [
 	    {
-	      "album_id": "2",
+	      "album_id": 2,(int)
 	      "date": "2016-05-18",
 	      "location": "Luzern,瑞士",
 	      "text": "我的心思不为谁而停留，我的征途是星辰大海",
@@ -217,7 +214,7 @@ uid已被注册过，返回
 	      "page_url": "http://objccn.io/issue-19-0/"
 	    },
 	    {
-	      "album_id": "3",
+	      "album_id": 3,(int)
 	      "date": "2016-05-17",
 	      "location": "Melbourne,澳大利亚",
 	      "text": "我像波浪一样摇摆，在梦想的生活和生活过的梦之间",
@@ -226,6 +223,7 @@ uid已被注册过，返回
 	      "music_url": "http://112.74.106.192/Beautiful_Day/music/2016-05-17.mp3",
 	      "page_url": "http://objccn.io/issue-1-0/"
 	    }
+	    ...
 	  ]
 	}
 
@@ -256,9 +254,9 @@ uid已被注册过，返回
 #####Response
 
 	{
-	  "zan": 1,
+	  "zan": 1,(int)
 	  "albuminfo": {
-	    "album_id": 2,
+	    "album_id": 2,(int)
 	    "date": "2016-05-17",
 	    "text": "test",
 	    "img_url": "http://112.74.106.192/Beautiful_Day/image/2016-05-17.png",
@@ -267,70 +265,36 @@ uid已被注册过，返回
 	  },
 	  "commentlist": [
 	    {
-	      "comment_id": 11,
-	      "album_id": 2,
+	      "comment_id": 11,(int)
+	      "album_id": 2,(int)
 	      "content": "这个世界还好吗",
-	      "user_id": 8,
+	      "user_id": 8,(int)
 	      "user_name": "yangce2",
 	      "created_at": "2016-06-04 02:46:42",
 	      "updated_at": "2016-06-04 02:46:42"
 	    },
 	    {
-	      "comment_id": 10,
-	      "album_id": 2,
+	      "comment_id": 10,(int)
+	      "album_id": 2,(int)
 	      "content": "这个世界还好吗",
-	      "user_id": 8,
+	      "user_id": 8,(int)
 	      "user_name": "yangce2",
 	      "created_at": "2016-06-04 02:45:30",
 	      "updated_at": "2016-06-04 02:45:30"
 	    },
-	    {
-	      "comment_id": 4,
-	      "album_id": 2,
-	      "content": "111111111",
-	      "user_id": 3,
-	      "user_name": "lucy",
-	      "created_at": "2016-05-25 17:31:22",
-	      "updated_at": "2016-05-25 17:31:22"
-	    },
-	    {
-	      "comment_id": 1,
-	      "album_id": 2,
-	      "content": "comment test 2016-05-24-2317",
-	      "user_id": 2,
-	      "user_name": "john",
-	      "created_at": "2016-05-24 05:31:22",
-	      "updated_at": "2016-05-24 05:31:22"
-	    }
+	    ...
 	  ],
 	  "zanlist": [
 	    {
-	      "zan_id": 29,
-	      "album_id": 2,
-	      "zan": 1,
-	      "user_id": 4,
+	      "zan_id": 29,(int)
+	      "album_id": 2,(int)
+	      "zan": 1,(int)
+	      "user_id": 4,(int)
 	      "created_at": "2016-06-21 20:32:36",
 	      "updated_at": "2016-06-21 20:32:36",
 	      "user_name": null
 	    },
-	    {
-	      "zan_id": 30,
-	      "album_id": 2,
-	      "zan": 1,
-	      "user_id": 8,
-	      "created_at": "2016-06-21 20:32:48",
-	      "updated_at": "2016-06-21 20:32:48",
-	      "user_name": "yangce2"
-	    },
-	    {
-	      "zan_id": 28,
-	      "album_id": 2,
-	      "zan": 1,
-	      "user_id": 3,
-	      "created_at": "2016-06-21 20:27:18",
-	      "updated_at": "2016-06-21 20:34:11",
-	      "user_name": "lucy"
-	    }
+		...
 	  ]
 	}
 
@@ -363,12 +327,12 @@ uid已被注册过，返回
 
 
 	{
-	  "success": "1",
+	  "success": 1,(int)
 	  "zaninfo": {
-	    "zan_id": 27,
-	    "album_id": 3,
-	    "zan": 0,(0表示未点赞，1表示已点赞)
-	    "user_id": 8,
+	    "zan_id": 27,(int)
+	    "album_id": 3,(int)
+	    "zan": 0,(0表示未点赞，1表示已点赞)(int)
+	    "user_id": 8,(int)
 	    "created_at": "2016-06-21 20:17:56",
 	    "updated_at": "2016-06-21 20:19:06",
 	    "user_name": "yangce2"
@@ -445,54 +409,28 @@ uid已被注册过，返回
 #####Response
 
 	{
-	  "Success": 1,
-	  "album_id": "2",
-	  "pagination": "3",
+	  "Success": 1,(int)
+	  "album_id": 2,(int)
+	  "pagination": 3,(int)
 	  "comment": [
 	    {
-	      "comment_id": "20",
-	      "album_id": "2",
+	      "comment_id": 20,(int)
+	      "album_id": 2,(int)
 	      "content": "hello,this is from jason",
-	      "user_id": "1",
+	      "user_id": 1,(int)
 	      "user_name": "Lily",
 	      "created_at": "2016-05-30 21:05:36",
 	      "updated_at": "2016-05-30 21:05:36"
 	    },
 	    {
-	      "comment_id": "19",
-	      "album_id": "2",
+	      "comment_id": 19,(int)
+	      "album_id": 2,(int)
 	      "content": "hello,this is from jason",
-	      "user_id": "1",
+	      "user_id": 1,(int)
 	      "user_name": "Lily",
 	      "created_at": "2016-05-30 21:05:36",
 	      "updated_at": "2016-05-30 21:05:36"
 	    },
-	    {
-	      "comment_id": "18",
-	      "album_id": "2",
-	      "content": "hello,this is from jason",
-	      "user_id": "1",
-	      "user_name": "Lily",
-	      "created_at": "2016-05-30 21:05:36",
-	      "updated_at": "2016-05-30 21:05:36"
-	    },
-	    {
-	      "comment_id": "17",
-	      "album_id": "2",
-	      "content": "hello,this is from jason",
-	      "user_id": "1",
-	      "user_name": "Lily",
-	      "created_at": "2016-05-30 21:05:36",
-	      "updated_at": "2016-05-30 21:05:36"
-	    },
-	    {
-	      "comment_id": "16",
-	      "album_id": "2",
-	      "content": "hello,this is from jason",
-	      "user_id": "1",
-	      "user_name": "Lily",
-	      "created_at": "2016-05-30 21:05:35",
-	      "updated_at": "2016-05-30 21:05:35"
-	    }
+		...
 	  ]
 	}
