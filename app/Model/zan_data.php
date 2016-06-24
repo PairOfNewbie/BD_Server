@@ -11,5 +11,5 @@ class zan_data extends Model
 
  // The attributes that should be casted to native types.
 
- protected $casts = ['album_id' => 'integer', 'zan_id' => 'integer', 'user_id' => 'integer', ];
+ protected $casts = ['album_id' => 'integer', 'zan_id' => 'integer', 'user_id' => 'integer', 'zan' => 'integer', ];
 }
