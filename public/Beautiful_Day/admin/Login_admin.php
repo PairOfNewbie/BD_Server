@@ -31,7 +31,7 @@ if (!isset($_SESSION['user'])) {
                 $row = mysqli_fetch_array($data);
                 $_SESSION['user'] = $row['user'];
                 setcookie('user', $row['user'], time() + (10));//(60 * 60 * 24 * 7));  // expires in 7 days
-                $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/admin_manage.php';
+                $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/qiniu_test.php';
                 header('Location: ' . $home_url);
             }
             else {

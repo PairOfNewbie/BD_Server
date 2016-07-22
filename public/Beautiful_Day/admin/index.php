@@ -16,6 +16,7 @@ $error_msg = "";
 // If the user isn't logged in, try to log them in
 if (!isset($_SESSION['user'])) {
     if (isset($_POST['submit'])) {
+
         // Connect to the database
         $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
